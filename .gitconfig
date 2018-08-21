@@ -1,0 +1,37 @@
+[core]
+	autocrlf = true
+[user]
+	name = Aaron Skiple
+	email = skipleam@users.noreply.github.com
+[alias]
+	alias = config --get-regexp alias
+	g = !gitk --all &
+	k = !gitk --all &
+	pulldev = fetch origin develop:develop
+	pd = fetch origin develop:develop
+	pullmaster = fetch origin master:master
+	pm = fetch origin master:master
+	
+	branches = branch --all
+	co = checkout
+	cob = checkout -b
+	prunegone = "!git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
+	
+	hist = log --graph --decorate --pretty=oneline --abbrev-commit --show-notes
+	histb = log --graph --decorate --pretty=oneline --abbrev-commit --show-notes develop..
+	lb = log --oneline develop..
+	ll = log HEAD~1..
+	diffb = diff --stat develop..
+	
+	cm = !git add -A && git commit -m
+	save = !git add -A && git commit -m 'SAVEPOINT'
+	wip = !git add -u && git commit -m "WIP"
+	undo = reset HEAD~1 --mixed
+	amend = commit -a --amend
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	squash = "!git reset $(git merge-base develop $(git branch | grep \\* | cut -d ' ' -f2-))"
+	sq = "!git reset $(git merge-base develop $(git branch | grep \\* | cut -d ' ' -f2-))"
+	squashm = "!git reset $(git merge-base master $(git branch | grep \\* | cut -d ' ' -f2-))"
+	sqm = "!git reset $(git merge-base master $(git branch | grep \\* | cut -d ' ' -f2-))"
+[color]
+	ui = true
