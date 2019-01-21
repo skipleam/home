@@ -5,6 +5,9 @@
 	email = skipleam@users.noreply.github.com
 [alias]
 	alias = config --get-regexp alias
+	name = config --local user.name
+	email = config --local user.email  # hint : GitHub public email is <####>+<username> at users.noreply.github.com
+	
 	g = !gitk --all &
 	k = !gitk --all &
 	pulldev = fetch origin develop:develop
