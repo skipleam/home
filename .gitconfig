@@ -8,8 +8,8 @@
 	name = config --local user.name
 	email = config --local user.email  # hint : GitHub public email is <####>+<username> at users.noreply.github.com
 	
-	g = !gitk --all &
-	k = !gitk --all &
+	g = !gitk --all --date-order &
+	k = !gitk --all --date-order &
 	pulldev = fetch origin develop:develop
 	pd = fetch origin develop:develop
 	pullmaster = fetch origin master:master
