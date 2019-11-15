@@ -1,0 +1,9 @@
+# Standard aliases
+alias bashreload='. ~/.bashrc'
+alias cd='pushd'
+
+
+# Client and project aliases, i.e. keep out of public source control
+for filename in .aliases/*.bashrc_aliases; do
+	. $filename
+done
