@@ -1,8 +1,8 @@
 [core]
 	autocrlf = true
 [user]
+	email = 15656654+skipleam@users.noreply.github.com
 	name = Aaron Skiple
-	email = skipleam@users.noreply.github.com
 [alias]
 	alias = config --get-regexp alias
 	name = config --local user.name
@@ -14,6 +14,7 @@
 	pd = fetch origin develop:develop
 	pullmaster = fetch origin master:master
 	pm = fetch origin master:master
+	sync = !git fetch -p && git pulldev && git prunegone && git status
 	
 	branches = branch --all
 	co = checkout
@@ -36,5 +37,10 @@
 	sq = "!git reset $(git merge-base develop $(git branch | grep \\* | cut -d ' ' -f2-))"
 	squashm = "!git reset $(git merge-base master $(git branch | grep \\* | cut -d ' ' -f2-))"
 	sqm = "!git reset $(git merge-base master $(git branch | grep \\* | cut -d ' ' -f2-))"
+	
+	unchanged = update-index --assume-unchanged
+	changed = update-index --no-assume-unchanged
 [color]
 	ui = true
+[include]
+    path = ~/.gitconfigs/signing.gitconfig

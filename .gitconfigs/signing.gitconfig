@@ -1,0 +1,6 @@
+[user]
+	## signingkey = 1F2E3D4C5B6A
+[commit]
+	gpgSign = true
+[gpg]
+	program = C:\\Program Files\\Git\\usr\\bin\\gpg.exe

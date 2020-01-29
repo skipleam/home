@@ -1,9 +1,11 @@
 # Standard aliases
 alias bashreload='. ~/.bashrc'
-alias cd='pushd'
+alias cd='pushd > /dev/null'
+
+alias gpglist='gpg --list-secret-keys --keyid-format LONG'
 
 
 # Client and project aliases, i.e. keep out of public source control
-for filename in .aliases/*.bashrc_aliases; do
+for filename in ~/.aliases/*.bashrc_aliases; do
 	. $filename
 done
